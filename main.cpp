@@ -25,19 +25,23 @@ int main() {
     loadWordsFromFile(trie, "data/words.txt");
 
     cout << "Enter a prefix to get suggestions: ";
-    string prefix;
-    cin >> prefix;
+    string prefix = "";
+    char ch;
 
-    // Get all words that start with the prefix
-    vector<string> suggestions = trie.getWordsWithPrefix(prefix);
+    while(cin >> ch) {
+        prefix += ch;
+        // Get all words that start with the prefix
+        vector<string> suggestions = trie.getWordsWithPrefix(prefix);
 
-    if (suggestions.empty()) {
-        cout << "No suggestions found for prefix: " << prefix << endl;
-    } else {
-        cout << "Suggestions for prefix '" << prefix << "':" << endl;
-        for (const string& word : suggestions) {
-            cout << word << endl;
+        if (suggestions.empty()) {
+            cout << "No suggestions found for prefix: " << prefix << endl;
+        } else {
+            cout << "Suggestions for prefix '" << prefix << "':" << endl;
+            for (const string& word : suggestions) {
+                cout << word << ", ";
+            } 
         }
+        cout << "\n";
     }
 
     return 0;

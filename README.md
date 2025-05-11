@@ -72,6 +72,11 @@ Open **VS Code Terminal** and press:
 
 ```bash
 Ctrl + Shift + B
+
+or
+
+g++ -g filename with directory\main.cpp -I filename with directory\include -o filename with directory\main.exe filename with directory\Trie.cpp
+
 ```
 
 This will compile `main.cpp` and `Trie.cpp`, and create `main.exe` in the project root folder.
